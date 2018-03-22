@@ -1,0 +1,18 @@
+Initialize 1
+YourName hello
+YourColour FF00FF
+GameOption 1 2.3
+GameStarts
+Radar 1.2 0 4.5
+Radar 1.2 3 4.5
+Info 1.2 3.4 5.6
+Coordinates 1.2 3.4 5.6
+RobotInfo 1.2 3
+RotationReached 1
+Energy 0.5
+RobotsLeft 2
+Collision 1 2.3
+Warning 1 warning
+Dead
+GameFinishes
+ExitRobot_no

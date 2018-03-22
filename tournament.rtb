@@ -1,0 +1,8 @@
+Robots: 
+/home/developer/bot/elixir.robot 
+/usr/lib/realtimebattle/Robots/perl.robot 
+Arenas: 
+/usr/lib/realtimebattle/Arenas/Nippon.arena 
+Robots/Sequence: 2
+Games/Sequence: 1
+Sequences: 1
