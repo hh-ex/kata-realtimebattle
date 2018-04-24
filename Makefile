@@ -8,7 +8,7 @@ docker-build:
 	sudo docker build -t hhex-rtb .
 
 docker-run:
-	sudo docker run -ti --rm -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix -v `pwd`:/home/developer/bot  hhex-rtb
+	sudo docker run -ti --rm -p 5900:5900 -v `pwd`:/home/developer/bot hhex-rtb
 
 logwatch:
 	tail -f bot.log

@@ -22,3 +22,7 @@ erl_crash.dump
 realtimebattlebot.iml
 .idea
 projectFilesBackup
+
+*.log
+.passwd
+nohup.out

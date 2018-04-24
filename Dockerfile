@@ -1,15 +1,13 @@
 FROM ubuntu:14.04
 
 # Install realtimebattle and needed wget
-RUN apt-get update && apt-get install -y realtimebattle wget python
+RUN apt-get update && apt-get install -y realtimebattle wget python vnc4server expect
 
 # Install erlang/elixir with Fix for language error
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
     && dpkg -i erlang-solutions_1.0_all.deb \
     && apt-get update \
-    && apt-get install -y esl-erlang \
-    && apt-get install -y elixir \
-    && apt-get install -y --no-install-recommends locales \
+    && apt-get install -y --no-install-recommends locales esl-erlang elixir \
     && locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -34,4 +32,6 @@ RUN echo "Robot search path: /home/developer/bot" >> /home/developer/.rtbrc
 #RUN echo "Cookie frequency [cookies per second]: 0.3" >> /home/developer/.rtbrc
 
 # Start rtp in debug mode
-CMD /usr/games/realtimebattle -d -D 5 -t tournament.rtb
+# CMD /usr/games/realtimebattle -d -D 5 -t tournament.rtb
+ENV DISPLAY :0
+CMD Xvnc ${DISPLAY} -rfbauth .passwd & sleep 2 && ./setup_passwd.sh && /usr/games/realtimebattle -d -D 5 -t tournament.rtb

@@ -6,6 +6,18 @@ Use a fork of this repo to develop your own bot so we can have a nice tournament
 
 Program your bot in this file `lib/your_bot.ex`.
 
-Start the whole thing with `make start`.
+## Setup
 
-The workaround for this is to use a Ubuntu 14.04 Docker container, in which this project in mounted at `/home/developer/bot`.
+You need
+
+ * Docker
+ * A VNC Client
+ * Some editor
+
+After setting up docker, you can start the bot using `make start`
+
+After that, you can connect to `vnc://localhost:5900` with your preferred VNC Client.
+
+The password is `password`
+
+macOS Users: you already have a VNC client! type `open vnc://localhost:5900` into your console after starting.
