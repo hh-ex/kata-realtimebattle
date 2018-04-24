@@ -34,4 +34,7 @@ RUN echo "Robot search path: /home/developer/bot" >> /home/developer/.rtbrc
 # Start rtp in debug mode
 # CMD /usr/games/realtimebattle -d -D 5 -t tournament.rtb
 ENV DISPLAY :0
-CMD Xvnc ${DISPLAY} -rfbauth .passwd & sleep 2 && ./setup_passwd.sh && /usr/games/realtimebattle -d -D 5 -t tournament.rtb
+CMD Xvnc ${DISPLAY} -rfbauth .passwd & \
+    sleep 2 && \
+    ./setup_passwd.sh && \
+    /usr/games/realtimebattle -d -D 5 -t tournament.rtb
