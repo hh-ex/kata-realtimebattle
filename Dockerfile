@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 # Install realtimebattle and needed wget
-RUN apt-get update && apt-get install -y realtimebattle wget python vnc4server expect
+RUN apt-get update && apt-get install -y realtimebattle wget python vnc4server expect twm
 
 # Install erlang/elixir with Fix for language error
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
@@ -36,5 +36,8 @@ RUN echo "Robot search path: /home/developer/bot" >> /home/developer/.rtbrc
 ENV DISPLAY :0
 CMD Xvnc ${DISPLAY} -rfbauth .passwd & \
     sleep 2 && \
+    twm & \
     ./setup_passwd.sh && \
     /usr/games/realtimebattle -d -D 5 -t tournament.rtb
+
+# CMD bash
