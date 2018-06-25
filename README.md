@@ -6,6 +6,8 @@ Use a fork of this repo to develop your own bot so we can have a nice tournament
 
 Program your bot in this file `lib/your_bot.ex`.
 
+Read the instructions in [write-your-own-bot.pdf](write-your-own-bot.pdf).
+
 ## Setup
 
 You need
